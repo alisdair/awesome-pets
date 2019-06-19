@@ -11,3 +11,14 @@ resource "random_pet" "pet" {
 output "pet_names" {
   value = [random_pet.pet.*.id]
 }
+
+terraform {
+  backend "remote" {
+    hostname = "app.terraform.io"
+    organization = "alisdair-free"
+
+    workspaces {
+      name = "awesome-pets"
+    }
+  }
+}
