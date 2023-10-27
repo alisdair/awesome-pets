@@ -6,6 +6,12 @@ variable "number" {
 resource "random_pet" "pet" {
   count = var.number
   length = 4
+  lifecycle {
+    precondition {
+      condition = var.number > 4
+      error_message = "Not enough components."
+    }
+  }
 }
 
 output "pet_names" {
