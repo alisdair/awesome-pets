@@ -5,7 +5,7 @@ variable "number" {
 
 resource "random_pet" "pet" {
   count = var.number
-  length = 3
+  length = 4
 }
 
 output "pet_names" {
