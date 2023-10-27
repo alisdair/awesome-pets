@@ -8,8 +8,8 @@ resource "random_pet" "pet" {
   length = 4
   lifecycle {
     precondition {
-      condition = var.number > 4
-      error_message = "Not enough components."
+      condition = var.number > 10
+      error_message = "Not enough pets."
     }
   }
 }
