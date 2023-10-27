@@ -9,7 +9,7 @@ resource "random_pet" "pet" {
 }
 
 output "pet_names" {
-  value = [random_pet.pet.*.id]
+  value = regex("horses", [random_pet.pet.*.id])
 }
 
 terraform {
